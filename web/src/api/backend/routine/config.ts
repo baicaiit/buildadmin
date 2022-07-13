@@ -1,5 +1,6 @@
 import createAxios from '/@/utils/axios'
-const controllerUrl = '/index.php/admin/routine.config/'
+
+const controllerUrl = '/routine.config/'
 export const actionUrl = new Map([
     ['index', controllerUrl + 'index'],
     ['add', controllerUrl + 'add'],

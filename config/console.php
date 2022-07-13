@@ -6,5 +6,6 @@ return [
     // 指令定义
     'commands' => [
         'app\admin\command\Crud',
+        'app\admin\command\Root',
     ],
 ];

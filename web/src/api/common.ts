@@ -7,13 +7,13 @@ import { getUrl } from '/@/utils/axios'
  */
 
 // Admin模块
-export const adminUploadUrl = '/index.php/admin/ajax/upload'
-export const adminBuildSuffixSvgUrl = '/index.php/admin/ajax/buildSuffixSvg'
-export const adminAreaUrl = '/index.php/admin/ajax/area'
-export const getTablePkUrl = '/index.php/admin/ajax/getTablePk'
-export const terminalUrl = '/index.php/admin/install/terminal'
-export const changeTerminalConfigUrl = '/index.php/admin/ajax/changeTerminalConfig'
-export const clearCacheUrl = '/index.php/admin/ajax/clearCache'
+export const adminUploadUrl = '/ajax/upload'
+export const adminBuildSuffixSvgUrl = '/ajax/buildSuffixSvg'
+export const adminAreaUrl = '/ajax/area'
+export const getTablePkUrl = '/ajax/getTablePk'
+export const terminalUrl = '/install/terminal'
+export const changeTerminalConfigUrl = '/ajax/changeTerminalConfig'
+export const clearCacheUrl = '/ajax/clearCache'
 
 // 公共
 export const captchaUrl = '/index.php/api/common/captcha'

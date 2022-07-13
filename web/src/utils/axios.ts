@@ -19,7 +19,9 @@ const loadingInstance: LoadingInstance = {
 
 export const getUrl = (): string => {
     const value: string = import.meta.env.VITE_AXIOS_BASE_URL as string
-    return value == 'getCurrentDomain' ? window.location.protocol + '//' + window.location.host : value
+    const baseName: string = import.meta.env.VITE_BASE_FILE_NAME as string
+    value == 'getCurrentDomain' ? window.location.protocol + '//' + window.location.host : value
+    return baseName == "" ? value : value + '/' + baseName
 }
 
 export const getUrlPort = (): string => {
@@ -34,7 +36,7 @@ export const getUrlPort = (): string => {
  */
 function createAxios(axiosConfig: AxiosRequestConfig, options: Options = {}, loading: LoadingOptions = {}): ApiPromise | AxiosPromise {
     const config = useConfig()
-
+    console.log(getUrl())
     const Axios = axios.create({
         baseURL: getUrl(),
         timeout: 1000 * 10,
@@ -339,3 +341,5 @@ interface Options {
  * 感谢掘金@橙某人提供的思路和分享
  * 本axios封装详细解释请参考：https://juejin.cn/post/6968630178163458084?share_token=7831c9e0-bea0-469e-8028-b587e13681a8#heading-27
  */
+
+export const INDEX_FILE_NAME = import.meta.env.VITE_INDEX_FILE_NAME;
