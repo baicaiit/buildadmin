@@ -65,7 +65,7 @@ return [
         // 默认驱动方式
         'default' => 'mysql',
         // 加密key
-        'key'     => 'ujHeZMEFOvX73Qx9UI5Wm2tc0hsSCLrb',
+        'key'     => 'bizCuDn2MW6Y0I9ZfX7gVTdjlORHFGph',
         // 加密方式
         'algo'    => 'ripemd160',
         // 驱动
@@ -100,5 +100,5 @@ return [
     // 版本号
     'version'              => 'v1.0.2',
     // 后台入口文件名
-    'base_file_name'       => '69sfQwm',
+    'base_file_name' => "",
 ];

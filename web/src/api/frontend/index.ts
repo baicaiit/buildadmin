@@ -1,6 +1,6 @@
 import createAxios from '/@/utils/axios'
 
-const controllerUrl = '/index.php/api/index/'
+const controllerUrl = '/api/index/'
 
 export function index() {
     return createAxios({

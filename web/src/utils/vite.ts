@@ -8,7 +8,6 @@ export interface ViteEnv {
     VITE_OUT_DIR: string
     VITE_AXIOS_BASE_URL: string
     VITE_PROXY_URL: string
-    VITE_INDEX_FILE_NAME: string
     VITE_BASE_FILE_NAME: string
 }
 

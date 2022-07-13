@@ -330,13 +330,14 @@ class CommandExec
     public function mvDist()
     {
         $distPath      = root_path() . $this->distDir . DIRECTORY_SEPARATOR;
-        $indexHtmlPath = $distPath . 'index.html';
+        $fileName = Config::get('buildadmin.base_file_name') . '.html';
+        $indexHtmlPath = $distPath . $fileName;
         $assetsPath    = $distPath . 'assets';
         if (!file_exists($indexHtmlPath) || !file_exists($assetsPath)) {
             return false;
         }
 
-        $toIndexHtmlPath = root_path() . 'public' . DIRECTORY_SEPARATOR . 'index.html';
+        $toIndexHtmlPath = root_path() . 'public' . DIRECTORY_SEPARATOR . $fileName;
         $toAssetsPath    = root_path() . 'public' . DIRECTORY_SEPARATOR . 'assets';
         @unlink($toIndexHtmlPath);
         deldir($toAssetsPath);

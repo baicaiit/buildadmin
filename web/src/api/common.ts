@@ -7,22 +7,22 @@ import { getUrl } from '/@/utils/axios'
  */
 
 // Admin模块
-export const adminUploadUrl = '/ajax/upload'
-export const adminBuildSuffixSvgUrl = '/ajax/buildSuffixSvg'
-export const adminAreaUrl = '/ajax/area'
-export const getTablePkUrl = '/ajax/getTablePk'
-export const terminalUrl = '/install/terminal'
-export const changeTerminalConfigUrl = '/ajax/changeTerminalConfig'
-export const clearCacheUrl = '/ajax/clearCache'
+export const adminUploadUrl = '/admin/ajax/upload'
+export const adminBuildSuffixSvgUrl = '/admin/ajax/buildSuffixSvg'
+export const adminAreaUrl = '/admin/ajax/area'
+export const getTablePkUrl = '/admin/ajax/getTablePk'
+export const terminalUrl = '/admin/install/terminal'
+export const changeTerminalConfigUrl = '/admin/ajax/changeTerminalConfig'
+export const clearCacheUrl = '/admin/ajax/clearCache'
 
 // 公共
-export const captchaUrl = '/index.php/api/common/captcha'
-export const refreshTokenUrl = '/index.php/api/common/refreshToken'
+export const captchaUrl = '/api/common/captcha'
+export const refreshTokenUrl = '/api/common/refreshToken'
 
 // api模块(前台)
-export const apiUploadUrl = '/index.php/api/ajax/upload'
-export const apiBuildSuffixSvgUrl = '/index.php/api/ajax/buildSuffixSvg'
-export const apiAreaUrl = '/index.php/api/ajax/area'
+export const apiUploadUrl = '/api/ajax/upload'
+export const apiBuildSuffixSvgUrl = '/api/ajax/buildSuffixSvg'
+export const apiAreaUrl = '/api/ajax/area'
 
 /**
  * 上传文件

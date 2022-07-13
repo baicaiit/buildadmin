@@ -8,6 +8,7 @@ import { refreshToken } from '/@/api/common'
 import { useUserInfo } from '/@/stores/userInfo'
 import { useAdminInfo } from '/@/stores/adminInfo'
 import { i18n } from '/@/lang/index'
+import { index } from '../api/frontend'
 
 window.requests = []
 window.tokenRefreshing = false
@@ -17,11 +18,10 @@ const loadingInstance: LoadingInstance = {
     count: 0,
 }
 
+
 export const getUrl = (): string => {
     const value: string = import.meta.env.VITE_AXIOS_BASE_URL as string
-    const baseName: string = import.meta.env.VITE_BASE_FILE_NAME as string
-    value == 'getCurrentDomain' ? window.location.protocol + '//' + window.location.host : value
-    return baseName == "" ? value : value + '/' + baseName
+    return value == 'getCurrentDomain' ? window.location.protocol + '//' + window.location.host : value;
 }
 
 export const getUrlPort = (): string => {
@@ -36,9 +36,18 @@ export const getUrlPort = (): string => {
  */
 function createAxios(axiosConfig: AxiosRequestConfig, options: Options = {}, loading: LoadingOptions = {}): ApiPromise | AxiosPromise {
     const config = useConfig()
-    console.log(getUrl())
+
+    let baseURL: string =  getUrl();
+
+    if (/^\/admin/.test(<string>axiosConfig.url)) {
+        const baseName: string = import.meta.env.VITE_BASE_FILE_NAME as string
+        baseURL = baseURL + '/' + baseName + '.php'
+        // 截取掉 /admin
+        axiosConfig.url = axiosConfig.url?.substring(6)
+    }
+
     const Axios = axios.create({
-        baseURL: getUrl(),
+        baseURL: baseURL,
         timeout: 1000 * 10,
         headers: {
             'Content-Type': 'application/json',
@@ -46,6 +55,8 @@ function createAxios(axiosConfig: AxiosRequestConfig, options: Options = {}, loa
         },
     })
 
+   
+   
     options = Object.assign(
         {
             CancelDuplicateRequest: true, // 是否开启取消重复请求, 默认为 true

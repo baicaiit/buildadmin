@@ -47,7 +47,7 @@
         "post-autoload-dump": [
             "@php think service:discover",
             "@php think vendor:publish",
-            "@php think file:build"
+            "@php think build:root"
         ]
     }
 }

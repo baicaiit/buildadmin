@@ -23,7 +23,7 @@ class Install extends Api
     /**
      * 环境检查状态
      */
-    static $ok   = 'ok';
+    static $ok = 'ok';
     static $fail = 'fail';
     static $warn = 'warn';
 
@@ -35,7 +35,7 @@ class Install extends Api
     /**
      * 配置文件
      */
-    static $dbConfigFileName    = 'database.php';
+    static $dbConfigFileName = 'database.php';
     static $buildConfigFileName = 'buildadmin.php';
 
     /**
@@ -47,8 +47,8 @@ class Install extends Api
      * 需要的依赖版本
      */
     static $needDependentVersion = [
-        'php'  => '7.1.0',
-        'npm'  => '7.0.0',
+        'php' => '7.1.0',
+        'npm' => '7.0.0',
         'cnpm' => '7.1.0',
         'node' => '14.13.1',
         'yarn' => '1.2.0',
@@ -121,7 +121,7 @@ class Install extends Api
         }
 
         // php版本-start
-        $phpVersion        = phpversion();
+        $phpVersion = phpversion();
         $phpVersionCompare = Version::compare(self::$needDependentVersion['php'], $phpVersion);
         if (!$phpVersionCompare) {
             $phpVersionLink = [
@@ -132,26 +132,26 @@ class Install extends Api
                 ],
                 [
                     // 如何解决
-                    'name'  => __('How to solve?'),
+                    'name' => __('How to solve?'),
                     'title' => __('Click to see how to solve it'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/preparePHP.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/preparePHP.html'
                 ]
             ];
         }
         // php版本-end
 
         // 数据库配置文件-start
-        $dbConfigFile     = config_path() . self::$dbConfigFileName;
+        $dbConfigFile = config_path() . self::$dbConfigFileName;
         $configIsWritable = path_is_writable(config_path()) && path_is_writable($dbConfigFile);
         if (!$configIsWritable) {
             $configIsWritableLink = [
                 [
                     // 查看原因
-                    'name'  => __('View reason'),
+                    'name' => __('View reason'),
                     'title' => __('Click to view the reason'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/dirNoPermission.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/dirNoPermission.html'
                 ]
             ];
         }
@@ -162,10 +162,10 @@ class Install extends Api
         if (!$publicIsWritable) {
             $publicIsWritableLink = [
                 [
-                    'name'  => __('View reason'),
+                    'name' => __('View reason'),
                     'title' => __('Click to view the reason'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/dirNoPermission.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/dirNoPermission.html'
                 ]
             ];
         }
@@ -180,10 +180,10 @@ class Install extends Api
                     'type' => 'text'
                 ],
                 [
-                    'name'  => __('How to solve?'),
+                    'name' => __('How to solve?'),
                     'title' => __('Click to see how to solve it'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/missingExtension.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/missingExtension.html'
                 ]
             ];
         }
@@ -194,22 +194,22 @@ class Install extends Api
         if (!$phpPopen) {
             $phpPopenLink = [
                 [
-                    'name'  => __('View reason'),
+                    'name' => __('View reason'),
                     'title' => __('Popen and Pclose functions in PHP Ini is disabled'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/disablement.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/disablement.html'
                 ],
                 [
-                    'name'  => __('How to modify'),
+                    'name' => __('How to modify'),
                     'title' => __('Click to view how to modify'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/disablement.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/disablement.html'
                 ],
                 [
-                    'name'  => __('Security assurance?'),
+                    'name' => __('Security assurance?'),
                     'title' => __('Using the installation service correctly will not cause any potential security problems. Click to view the details'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/senior.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/senior.html'
                 ],
             ];
         }
@@ -220,57 +220,57 @@ class Install extends Api
         if (!$phpFileOperation) {
             $phpFileOperationLink = [
                 [
-                    'name'  => __('View reason'),
+                    'name' => __('View reason'),
                     'title' => __('Feof and fgets functions in PHP Ini is disabled'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/fileOperation.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/fileOperation.html'
                 ],
                 [
-                    'name'  => __('How to modify'),
+                    'name' => __('How to modify'),
                     'title' => __('Click to view how to modify'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/fileOperation.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/fileOperation.html'
                 ],
                 [
-                    'name'  => __('Security assurance?'),
+                    'name' => __('Security assurance?'),
                     'title' => __('Using the installation service correctly will not cause any potential security problems. Click to view the details'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/senior.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/senior.html'
                 ],
             ];
         }
         // 文件操作-end
 
         $this->success('', [
-            'php_version'        => [
+            'php_version' => [
                 'describe' => $phpVersion,
-                'state'    => $phpVersionCompare ? self::$ok : self::$fail,
-                'link'     => $phpVersionLink ?? [],
+                'state' => $phpVersionCompare ? self::$ok : self::$fail,
+                'link' => $phpVersionLink ?? [],
             ],
             'config_is_writable' => [
                 'describe' => self::writableStateDescribe($configIsWritable),
-                'state'    => $configIsWritable ? self::$ok : self::$fail,
-                'link'     => $configIsWritableLink ?? []
+                'state' => $configIsWritable ? self::$ok : self::$fail,
+                'link' => $configIsWritableLink ?? []
             ],
             'public_is_writable' => [
                 'describe' => self::writableStateDescribe($publicIsWritable),
-                'state'    => $publicIsWritable ? self::$ok : self::$fail,
-                'link'     => $publicIsWritableLink ?? []
+                'state' => $publicIsWritable ? self::$ok : self::$fail,
+                'link' => $publicIsWritableLink ?? []
             ],
-            'php-mysqli'         => [
+            'php-mysqli' => [
                 'describe' => $phpMysqli ? __('already installed') : __('Not installed'),
-                'state'    => $phpMysqli ? self::$ok : self::$fail,
-                'link'     => $phpMysqliLink ?? []
+                'state' => $phpMysqli ? self::$ok : self::$fail,
+                'link' => $phpMysqliLink ?? []
             ],
-            'php_popen'          => [
+            'php_popen' => [
                 'describe' => $phpPopen ? __('Allow execution') : __('disabled'),
-                'state'    => $phpPopen ? self::$ok : self::$warn,
-                'link'     => $phpPopenLink ?? []
+                'state' => $phpPopen ? self::$ok : self::$warn,
+                'link' => $phpPopenLink ?? []
             ],
             'php_file_operation' => [
                 'describe' => $phpFileOperation ? __('Allow operation') : __('disabled'),
-                'state'    => $phpFileOperation ? self::$ok : self::$warn,
-                'link'     => $phpFileOperationLink ?? []
+                'state' => $phpFileOperation ? self::$ok : self::$warn,
+                'link' => $phpFileOperationLink ?? []
             ],
         ]);
     }
@@ -287,7 +287,7 @@ class Install extends Api
         $packageManager = request()->post('manager', 'none');
 
         // npm
-        $npmVersion        = Version::getVersion('npm');
+        $npmVersion = Version::getVersion('npm');
         $npmVersionCompare = Version::compare(self::$needDependentVersion['npm'], $npmVersion);
         if (!$npmVersionCompare || !$npmVersion) {
             $npmVersionLink = [
@@ -298,17 +298,17 @@ class Install extends Api
                 ],
                 [
                     // 如何解决
-                    'name'  => __('How to solve?'),
+                    'name' => __('How to solve?'),
                     'title' => __('Click to see how to solve it'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/prepareNpm.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/prepareNpm.html'
                 ]
             ];
         }
 
         // 包管理器
         if (in_array($packageManager, ['npm', 'cnpm', 'pnpm', 'yarn'])) {
-            $pmVersion        = Version::getVersion($packageManager);
+            $pmVersion = Version::getVersion($packageManager);
             $pmVersionCompare = Version::compare(self::$needDependentVersion[$packageManager], $pmVersion);
 
             if (!$pmVersion) {
@@ -321,9 +321,9 @@ class Install extends Api
                 if ($npmVersionCompare) {
                     $pmVersionLink[] = [
                         // 点击安装
-                        'name'  => __('Click Install %s', [$packageManager]),
+                        'name' => __('Click Install %s', [$packageManager]),
                         'title' => '',
-                        'type'  => 'install-package-manager'
+                        'type' => 'install-package-manager'
                     ];
                 } else {
                     $pmVersionLink[] = [
@@ -346,15 +346,15 @@ class Install extends Api
                 ];
             }
         } elseif ($packageManager == 'ni') {
-            $pmVersion        = __('nothing');
+            $pmVersion = __('nothing');
             $pmVersionCompare = true;
         } else {
-            $pmVersion        = __('nothing');
+            $pmVersion = __('nothing');
             $pmVersionCompare = false;
         }
 
         // nodejs
-        $nodejsVersion        = Version::getVersion('node');
+        $nodejsVersion = Version::getVersion('node');
         $nodejsVersionCompare = Version::compare(self::$needDependentVersion['node'], $nodejsVersion);
         if (!$nodejsVersionCompare || !$nodejsVersion) {
             $nodejsVersionLink = [
@@ -365,29 +365,29 @@ class Install extends Api
                 ],
                 [
                     // 如何解决
-                    'name'  => __('How to solve?'),
+                    'name' => __('How to solve?'),
                     'title' => __('Click to see how to solve it'),
-                    'type'  => 'faq',
-                    'url'   => 'https://wonderful-code.gitee.io/guide/install/prepareNodeJs.html'
+                    'type' => 'faq',
+                    'url' => 'https://wonderful-code.gitee.io/guide/install/prepareNodeJs.html'
                 ]
             ];
         }
 
         $this->success('', [
-            'npm_version'         => [
+            'npm_version' => [
                 'describe' => $npmVersion ? $npmVersion : __('Acquisition failed'),
-                'state'    => $npmVersionCompare ? self::$ok : self::$warn,
-                'link'     => $npmVersionLink ?? [],
+                'state' => $npmVersionCompare ? self::$ok : self::$warn,
+                'link' => $npmVersionLink ?? [],
             ],
-            'nodejs_version'      => [
+            'nodejs_version' => [
                 'describe' => $nodejsVersion ? $nodejsVersion : __('Acquisition failed'),
-                'state'    => $nodejsVersionCompare ? self::$ok : self::$warn,
-                'link'     => $nodejsVersionLink ?? []
+                'state' => $nodejsVersionCompare ? self::$ok : self::$warn,
+                'link' => $nodejsVersionLink ?? []
             ],
             'npm_package_manager' => [
                 'describe' => $pmVersion ? $pmVersion : __('Acquisition failed'),
-                'state'    => $pmVersionCompare ? self::$ok : self::$warn,
-                'link'     => $pmVersionLink ?? [],
+                'state' => $pmVersionCompare ? self::$ok : self::$warn,
+                'link' => $pmVersionLink ?? [],
             ]
         ]);
     }
@@ -438,13 +438,13 @@ class Install extends Api
 
         // 数据库配置测试
         try {
-            $dbConfig                                     = Config::get('database');
+            $dbConfig = Config::get('database');
             $dbConfig['connections']['mysql']['hostname'] = $param['hostname'];
             $dbConfig['connections']['mysql']['database'] = $param['database'];
             $dbConfig['connections']['mysql']['username'] = $param['username'];
             $dbConfig['connections']['mysql']['password'] = $param['password'];
             $dbConfig['connections']['mysql']['hostport'] = $param['hostport'];
-            $dbConfig['connections']['mysql']['prefix']   = $param['prefix'];
+            $dbConfig['connections']['mysql']['prefix'] = $param['prefix'];
             Config::set(['connections' => $dbConfig['connections']], 'database');
 
             $connect = Db::connect('mysql');
@@ -467,20 +467,20 @@ class Install extends Api
         }
 
         // 写入数据库配置文件
-        $dbConfigFile    = config_path() . self::$dbConfigFileName;
+        $dbConfigFile = config_path() . self::$dbConfigFileName;
         $dbConfigContent = @file_get_contents($dbConfigFile);
-        $callback        = function ($matches) use ($param) {
+        $callback = function ($matches) use ($param) {
             $value = $param[$matches[1]] ?? '';
             return "'{$matches[1]}'{$matches[2]}=>{$matches[3]}env('database.{$matches[1]}', '{$value}'),";
         };
-        $dbConfigText    = preg_replace_callback("/'(hostname|database|username|password|hostport|prefix)'(\s+)=>(\s+)env\('database\.(.*)',\s+'(.*)'\)\,/", $callback, $dbConfigContent);
-        $result          = @file_put_contents($dbConfigFile, $dbConfigText);
+        $dbConfigText = preg_replace_callback("/'(hostname|database|username|password|hostport|prefix)'(\s+)=>(\s+)env\('database\.(.*)',\s+'(.*)'\)\,/", $callback, $dbConfigContent);
+        $result = @file_put_contents($dbConfigFile, $dbConfigText);
         if (!$result) {
             $this->error(__('File has no write permission:%s', ['config/' . self::$dbConfigFileName]));
         }
 
         // 写入.env-example文件
-        $envFile        = root_path() . '.env-example';
+        $envFile = root_path() . '.env-example';
         $envFileContent = @file_get_contents($envFile);
         if ($envFileContent && stripos($envFileContent, '[DATABASE]') === false) {
             $envFileContent .= "\n" . '[DATABASE]' . "\n";
@@ -492,26 +492,26 @@ class Install extends Api
             $envFileContent .= 'HOSTPORT = ' . $param['hostport'] . "\n";
             $envFileContent .= 'CHARSET = utf8' . "\n";
             $envFileContent .= 'DEBUG = true' . "\n";
-            $result         = @file_put_contents($envFile, $envFileContent);
+            $result = @file_put_contents($envFile, $envFileContent);
             if (!$result) {
                 $this->error(__('File has no write permission:%s', ['/' . $envFile]));
             }
         }
 
         // 设置新的Token随机密钥key
-        $oldTokenKey        = Config::get('buildadmin.token.key');
-        $newTokenKey        = Random::build('alnum', 32);
-        $buildConfigFile    = config_path() . self::$buildConfigFileName;
+        $oldTokenKey = Config::get('buildadmin.token.key');
+        $newTokenKey = Random::build('alnum', 32);
+        $buildConfigFile = config_path() . self::$buildConfigFileName;
         $buildConfigContent = @file_get_contents($buildConfigFile);
         $buildConfigContent = preg_replace("/'key'(\s+)=>(\s+)'{$oldTokenKey}'/", "'key'\$1=>\$2'{$newTokenKey}'", $buildConfigContent);
-        $result             = @file_put_contents($buildConfigFile, $buildConfigContent);
+        $result = @file_put_contents($buildConfigFile, $buildConfigContent);
         if (!$result) {
             $this->error(__('File has no write permission:%s', ['config/' . self::$buildConfigFileName]));
         }
 
         // 管理员配置入库
-        $adminModel             = new AdminModel();
-        $defaultAdmin           = $adminModel->where('username', 'admin')->find();
+        $adminModel = new AdminModel();
+        $defaultAdmin = $adminModel->where('username', 'admin')->find();
         $defaultAdmin->username = $param['adminname'];
         $defaultAdmin->nickname = ucfirst($param['adminname']);
         $defaultAdmin->save();
@@ -569,10 +569,10 @@ class Install extends Api
         if ($pm == 'none') {
             return false;
         }
-        $check['phpPopen']             = function_exists('popen') && function_exists('pclose');
-        $check['phpFileOperation']     = function_exists('feof') && function_exists('fgets');
-        $check['npmVersionCompare']    = Version::compare(self::$needDependentVersion['npm'], Version::getVersion('npm'));
-        $check['pmVersionCompare']     = Version::compare(self::$needDependentVersion[$pm], Version::getVersion($pm));
+        $check['phpPopen'] = function_exists('popen') && function_exists('pclose');
+        $check['phpFileOperation'] = function_exists('feof') && function_exists('fgets');
+        $check['npmVersionCompare'] = Version::compare(self::$needDependentVersion['npm'], Version::getVersion('npm'));
+        $check['pmVersionCompare'] = Version::compare(self::$needDependentVersion[$pm], Version::getVersion($pm));
         $check['nodejsVersionCompare'] = Version::compare(self::$needDependentVersion['node'], Version::getVersion('node'));
 
         $envOk = true;
@@ -597,7 +597,8 @@ class Install extends Api
 
     public function mvDist()
     {
-        if (!is_file(root_path() . self::$distDir . DIRECTORY_SEPARATOR . 'index.html')) {
+        $fileName = Config::get('buildadmin.base_file_name') . '.html';
+        if (!is_file(root_path() . self::$distDir . DIRECTORY_SEPARATOR . $fileName)) {
             $this->error(__('No built front-end file found, please rebuild manually!'));
         }
 
@@ -626,7 +627,7 @@ class Install extends Api
     private function testConnectDatabase($database)
     {
         try {
-            $dbConfig                         = Config::get('database');
+            $dbConfig = Config::get('database');
             $dbConfig['connections']['mysql'] = array_merge($dbConfig['connections']['mysql'], $database);
             Config::set(['connections' => $dbConfig['connections']], 'database');
 
@@ -636,14 +637,14 @@ class Install extends Api
             $errorMsg = $e->getMessage();
             return [
                 'code' => 0,
-                'msg'  => __('Database connection failed:%s', [mb_convert_encoding($errorMsg ? $errorMsg : 'unknown', 'UTF-8', 'UTF-8,GBK,GB2312,BIG5')])
+                'msg' => __('Database connection failed:%s', [mb_convert_encoding($errorMsg ? $errorMsg : 'unknown', 'UTF-8', 'UTF-8,GBK,GB2312,BIG5')])
             ];
         }
 
         $databases = [];
         // 不需要的数据表
         $databasesExclude = ['information_schema', 'mysql', 'performance_schema', 'sys'];
-        $res              = $connect->query("SHOW DATABASES");
+        $res = $connect->query("SHOW DATABASES");
         foreach ($res as $row) {
             if (!in_array($row['Database'], $databasesExclude)) {
                 $databases[] = $row['Database'];
@@ -651,8 +652,8 @@ class Install extends Api
         }
 
         return [
-            'code'      => 1,
-            'msg'       => '',
+            'code' => 1,
+            'msg' => '',
             'databases' => $databases,
         ];
     }

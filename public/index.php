@@ -33,10 +33,10 @@ if (substr($_SERVER['REQUEST_URI'], 1, 9) != 'index.php') {
      * 如果存在 index.html 则访问 index.html
      * 本系统无需且不能配置隐藏 index.php 文件
      */
-    if (is_file($rootPath . 'index.html')) {
-        header("location:" . DIRECTORY_SEPARATOR . 'index.html');
-        exit();
-    }
+//    if (is_file($rootPath . 'index.html')) {
+//        header("location:" . DIRECTORY_SEPARATOR . 'index.html');
+//        exit();
+//    }
     // 检测是否已编译前端-e
 }
 

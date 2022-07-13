@@ -1,8 +1,7 @@
 import createAxios from '/@/utils/axios'
 import { authAdminLog } from '/@/api/controllerUrls'
 
-const controllerUrl = '/routine.AdminInfo/'
-
+const controllerUrl = '/admin/routine.AdminInfo/'
 export const actionUrl = new Map([
     ['index', controllerUrl + 'index'],
     ['edit', controllerUrl + 'edit'],

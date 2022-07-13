@@ -10,7 +10,7 @@ const pathResolve = (dir: string): any => {
 
 // https://vitejs.cn/config/
 const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
-    const { VITE_PORT, VITE_OPEN, VITE_BASE_PATH, VITE_OUT_DIR, VITE_PROXY_URL, VITE_INDEX_FILE_NAME } = loadEnv(mode)
+    const { VITE_PORT, VITE_OPEN, VITE_BASE_PATH, VITE_OUT_DIR, VITE_PROXY_URL, VITE_BASE_FILE_NAME } = loadEnv(mode)
 
     const alias: Record<string, string> = {
         '/@': pathResolve('./src/'),
@@ -22,7 +22,7 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
 
     if (VITE_PROXY_URL) {
         proxy = {
-            [`${VITE_INDEX_FILE_NAME}.php`]: {
+            [`${VITE_BASE_FILE_NAME}.php`]: {
                 target: VITE_PROXY_URL,
                 changeOrigin: true,
             },
@@ -47,7 +47,7 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
             chunkSizeWarningLimit: 1500,
             rollupOptions: {
                 input: {
-                    main: resolve(__dirname, `${VITE_INDEX_FILE_NAME}.html`)
+                    main: resolve(__dirname, `${VITE_BASE_FILE_NAME}.html`)
                 }
             }
         },
